@@ -6,9 +6,8 @@ import java.sql.SQLException;
 
 import com.webapp2022.riepilogo.persistenza.dao.RecensioneDao;
 import com.webapp2022.riepilogo.persistenza.dao.UtenteDao;
-
-import it.unical.mat.webapp23.catena_ristoranti.persistenza.dao.postgres.RecensioneDaoPostgres;
-import it.unical.mat.webapp23.catena_ristoranti.persistenza.dao.postgres.UtenteDaoPostgres;
+import com.webapp2022.riepilogo.persistenza.dao.postgres.RecensioneDaoPostgres;
+import com.webapp2022.riepilogo.persistenza.dao.postgres.UtenteDaoPostgres;
 
 public class DBManager {
 	private static DBManager instance = null;
