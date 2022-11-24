@@ -1,0 +1,18 @@
+body {
+	font-family: Arial;
+}
+
+.headerPrincipale{
+	background: green;
+	color: white;
+	text-align: center;
+	padding: 30px;
+}
+
+footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: right;
+	background: cyan;
+}
