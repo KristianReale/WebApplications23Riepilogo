@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet{
 			}
 		}
 		if (logged) {
-			resp.sendRedirect("/");
+			resp.sendRedirect("/home");
 		}else {
 			resp.sendRedirect("/nonSeiAutorizzato.html");
 		}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Gestione Recensioni</title>
+	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.css">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<section>
+		<article th:each="recens : ${recensioni}">
+			<h5 class="card-title">
+				Recensione <span th:text="${recens.id}"></span> 
+			</h5>
+			<h6 th:text="${recens.titolo}" class="card-subtitle mb-2 text-muted">
+			</h6>	
+			<p th:text="${recens.testo}" class="card-text"></p>
+			<button th:onclick="|miPiace(${recens.id});|" class="btn btn-success">Mi piace</button>
+			<button th:onclick="|nonMiPiace(${recens.id})|;" class="btn btn-danger">Non mi piace</button>
+			<img src="img/like.png" width="20px" /> 
+				<span th:id="'like_' + ${recens.id}" th:text="${recens.numeroMiPiace}"></span> 
+			<img src="img/dislike.png" width="20px" /> 
+				<span th:id="'dislike_' + ${recens.id}" th:text="${recens.numeroNonMiPiace}"></span> 
+		</article>
+	</section>
+</body>
+</html>
