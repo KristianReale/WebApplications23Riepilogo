@@ -2,6 +2,7 @@ package com.webapp2022.riepilogo.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,9 +36,10 @@ public class LoginServlet extends HttpServlet{
 			}
 		}
 		if (logged) {
-			resp.sendRedirect("/home");
+			resp.sendRedirect("/");
 		}else {
-			resp.sendRedirect("/nonSeiAutorizzato.html");
+			RequestDispatcher dispacher = req.getRequestDispatcher("views/nonSeiAutorizzato.html");
+			dispacher.forward(req, resp);
 		}
 		
 	}

@@ -12,13 +12,12 @@ import javax.servlet.http.HttpSession;
 
 import com.webapp2022.riepilogo.model.Utente;
 
-@WebServlet("/home")
+@WebServlet("/")
 public class HomeServlet extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
 		Utente u = (Utente)session.getAttribute("user");
-		System.out.println("hh" + u);
 		if (u != null) {
 			req.setAttribute("user", u);
 		}
