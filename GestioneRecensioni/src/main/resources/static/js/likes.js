@@ -16,11 +16,16 @@ function miPiace(recensioneId){
 
 function nonMiPiace(recensioneId){
 		$.ajax({
-			url: "XXXX",
-			data: {XXXX},
+			url: "/nonMiPiaceAction",
+			data: {"recensione" : recensioneId},
 			type: "post",
 			success : function(risposta){
-				
+				var id = "dislike_" + recensioneId;
+				var likeSpan = document.querySelector("#" + id);
+				likeSpan.innerHTML = risposta;
+			},
+			fail : function(){
+				//errore
 			}
 		});
 }
