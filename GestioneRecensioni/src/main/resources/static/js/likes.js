@@ -1,10 +1,15 @@
 function miPiace(recensioneId){
 	$.ajax({
-			url: "XXXX",
-			data: {XXXX},
+			url: "/miPiaceAction",
+			data: {"recensione" : recensioneId},
 			type: "post",
 			success : function(risposta){
-				
+				var id = "like_" + recensioneId;
+				var likeSpan = document.querySelector("#" + id);
+				likeSpan.innerHTML = risposta;
+			},
+			fail : function(){
+				//errore
 			}
 		});
 }
